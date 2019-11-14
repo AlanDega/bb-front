@@ -1,15 +1,15 @@
 import React from 'react';
 import Layout from '../common/Layout';
-import Feed from '../common/Feed';
+import FeedBTC from '../common/FeedBTC';
 
 function Home() {
     return(
         <>
-        < Layout head = "Bienvenidos a postealo!"
-        subhead = "Busca el post que más te guste en postealo." />
-        <Feed/>
+        < Layout head = "Bitcoin"
+        subhead = "200000 MXN" />
+        <FeedBTC/>
         </>
-    );
+    )
 }
 
 export default Home;

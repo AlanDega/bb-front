@@ -1,16 +1,16 @@
 import React from 'react';
 import Navbar from './Navbar';
-import Head from './Head';
+import HeadETH from './HeadETH';
 
-function Layout({ head, subhead, children, cover }){
+function LayoutETH({ head, subhead, children, cover }){
     return (
     <>
       <Navbar title="Cryptapi"/>
-      <Head title={head} subheading={subhead} cover={cover} />
+      <HeadETH title={head} subheading={subhead} cover={cover} />
         {children}
       {/* <Head title="Bienvenidos a postealo!" subheading="Busca el post que más te guste."/> */}
     </>
   );
 }
 
-export default Layout;
+export default LayoutETH;

@@ -42,7 +42,7 @@ function Signup({history}) {
     } = useForm(catchData);
 
     return(<>
-        <Layout head = "Crea tu cuenta en postealo!"
+        <Layout head = "Crea tu cuenta en cryptapi!"
         subhead = "Recuerda que es necesario para empezar a escribir" >
         <div className="container">
             <div className="row">

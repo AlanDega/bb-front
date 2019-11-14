@@ -3,7 +3,7 @@ import {useQuery} from 'react-apollo-hooks';
 import gql from 'graphql-tag';
 import Layout from '../common/Layout';
 import PostCard from '../components/PostCard';
-import authHOC from '../utils/authHOC';
+// import authHOC from '../utils/authHOC';
 
 const PROFILE = gql`
 

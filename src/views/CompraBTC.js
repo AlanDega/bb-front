@@ -6,34 +6,37 @@ import Input from '../common/Input'
 import useForm from '../hooks/useForm';
 import authHOC from '../utils/authHOC';
 
-const CREATE_POST = gql`
-    mutation createPost($data:PostInput!){
-        createNewPost(data:$data){
+const CREATE_TRANSACTION = gql`
+    mutation createTransaction($data:TransactionInput!){
+        createNewTransaction(data:$data){
             _id
+            currency
+            transaction_type
+
         }
     }
 `;
 
-function Create({history}){
-    const [sendPost] = useMutation(CREATE_POST);
-    const [cover,setCover] = useState('');
-    const [coverPreview, setCoverPreview] = useState('');
+function CompraBTC({history}){
+    const [sendTransaction] = useMutation(CREATE_TRANSACTION);
+    // const [cover,setCover] = useState('');
+    // const [coverPreview, setCoverPreview] = useState('');
 
-    const catchCover = event => {
-        const reader = new FileReader();
-        const file = event.target.files[0];
+    // const catchCover = event => {
+    //     const reader = new FileReader();
+    //     const file = event.target.files[0];
 
-        reader.onloadend = () =>{
-            setCover(file);
-            setCoverPreview(reader.result);
-        } 
+    //     reader.onloadend = () =>{
+    //         setCover(file);
+    //         setCoverPreview(reader.result);
+    //     } 
 
-        reader.readAsDataURL(file);
+    //     reader.readAsDataURL(file);
 
-    }
+    // }
 
     const catchData = async (inputs) => {
-        const { data, errors} = await sendPost({variables:{data:{...inputs,cover}}});
+        const { data, errors} = await sendTransaction({variables:{data:{...inputs}}});
         if(data) history.push('/');
         if (errors) alert(`Errores: ${errors}`);
     }
@@ -45,31 +48,31 @@ function Create({history}){
     } = useForm(catchData);
     
     return(<>
-         <Layout head = "Crea un post para postealo!"
-        subhead = "Comparte todo lo que gustes aqui" >
+         {/* <Layout head = "Crea un post para postealo!"
+        subhead = "Comparte todo lo que gustes aqui" > */}
         <div className="container">
             <div className="row">
             <div className="col-lg-8 col-md-10 mx-auto">
                 <form onSubmit={handleSubmit}>
                     <Input
-                    name="title"
-                    label="Titulo: "
+                    name="currency"
+                    label="currency: "
                     type="text"
-                    placeholder="Titulo del post"
-                    value={inputs.title}
+                    placeholder=""
+                    value={inputs.currency}
                     change={handleInputChange}
                     required={true}
                     ></Input>
                     <div className="control-group">
                             <div className="form-group floating-label-form-group controls">
-                                <label>Contenido: </label>
+                                <label>Cantidad: </label>
                                 <textarea className="form-control" 
-                                placeholder="Contenido del post "
-                                name="content" onChange={handleInputChange} value={inputs.content} 
-                                cols="30" rows="10"></textarea>
+                                placeholder="Cantidad"
+                                name="content" onChange={handleInputChange} value={inputs.transaction_type} 
+                                ></textarea>
                             </div>
                         </div>
-                    <Input
+                    {/* <Input
                     name="cover"
                     label="Cover: "
                     type="file"
@@ -77,19 +80,19 @@ function Create({history}){
                     change={catchCover}
                     required={true}
                     ></Input>
-                    <img src={coverPreview} alt="" className="d-block w-50"></img>
+                    <img src={coverPreview} alt="" className="d-block w-50"></img> */}
         
                 <div className="clearfix mt-4">
                     <button className="btn btn-primary float-right" type="submit">
-                        Guardar post. 
+                        Compra
                         </button>
                 </div>
                 </form>
             </div>
             </div>
         </div>
-        </Layout>
+        {/* </Layout> */}
     </>);
 }
 
-export default authHOC(Create);
+export default (CompraBTC);

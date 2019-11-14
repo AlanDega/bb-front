@@ -1,16 +1,16 @@
 import React from 'react';
 import Navbar from './Navbar';
-import Head from './Head';
+import HeadNEO from './HeadNEO';
 
-function Layout({ head, subhead, children, cover }){
+function LayoutNEO({ head, subhead, children, cover }){
     return (
     <>
-      <Navbar title="Cryptapi"/>
-      <Head title={head} subheading={subhead} cover={cover} />
+      <Navbar title="eos"/>
+      <HeadNEO title={head} subheading={subhead} cover={cover} />
         {children}
       {/* <Head title="Bienvenidos a postealo!" subheading="Busca el post que más te guste."/> */}
     </>
   );
 }
 
-export default Layout;
+export default LayoutNEO;

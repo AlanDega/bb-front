@@ -1,5 +1,6 @@
 // Bootstrap overrides for this template
 .btn {
+  background-color: purple;
   font-size: 14px;
   font-weight: 800;
   padding: 15px 25px;
@@ -10,8 +11,8 @@
 }
 
 .btn-primary {
-  background-color: $primary;
-  border-color: $primary;
+  background-color: rgba(185, 185, 20, 0.808);
+  border-color: rgba(185, 185, 20, 0.808);
   &:hover,
   &:focus,
   &:active {
@@ -21,7 +22,23 @@
   }
 }
 
+.ethereum {
+  background-color: purple;
+  border-color: $primary;
+  
+}
+
+
 .btn-lg {
-  font-size: 16px;
-  padding: 25px 35px;
+  background-color: green;
+  border-color: green;
+  &:hover,
+  &:focus,
+  &:active {
+    color: $white;
+    background-color: darken($primary, 7.5) !important;
+    border-color: darken($primary, 7.5) !important;
+  }
+
+
 }

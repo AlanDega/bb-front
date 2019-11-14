@@ -4,10 +4,17 @@ import Home from './views/Home'
 import Login from './views/Login'
 import Signup from './views/Signup'
 import authHOC from './utils/authHOC';
-import Create from './views/Create';
+import CompraBTC from './views/CompraBTC';
 import Post from './views/Post';
 import Update from './views/Update';
 import Me from './views/Me';
+import ETH from './views/ETH'
+import NEO from './views/NEO'
+import Wallet from './views/Wallet'
+
+
+
+import Movimientos from './views/Movimientos'
 
 function Logout (){
     localStorage.removeItem('blogToken');
@@ -20,9 +27,16 @@ function Routes() {
     return(
         <>
             <Route exact path="/" component={Home}/>
+            <Route exact path="/eth" component={ETH}/>
+            <Route exact path="/neo" component={NEO}/>
+
+            <Route exact path="/movimientos" component={Movimientos}/>
+
             <Route exact path="/login" component={Login}/>
+            <Route exact path="/wallet" component={Wallet}/>
+
             <Route exact path="/signup" component={Signup}/>
-            <Route exact path="/create" component={Create}/>
+            <Route exact path="/comprabtc" component={CompraBTC}/>
             <Route exact path="/post/:id" component={Post} />
             <Route exact path="/logout" component={authHOC(Logout)}/>
             <Route exact path="/update/:id" component={Update} />
