@@ -2,7 +2,7 @@ import React from 'react';
 import {useQuery} from 'react-apollo-hooks';
 import gql from 'graphql-tag';
 import Layout from '../common/Layout';
-import PostCard from '../components/PostCard';
+import TransactionCard from '../components/TransactionCard';
 // import authHOC from '../utils/authHOC';
 
 const PROFILE = gql`
@@ -37,7 +37,7 @@ function Me(){
                 <div className="col-lg-8 col-md-10 mx-auto">
                     {
                         data.me.posts.filter(post => post.is_active).map( post =>
-                            <PostCard
+                            <TransactionCard
                             title={post.title}
                             author={data.me.first_name}
                             id={post._id}

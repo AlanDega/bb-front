@@ -45,11 +45,11 @@ class Navbar extends Component{
                         <li className="nav-item">
                         <Link className="nav-link" to="/me">Hola {payload.first_name}!</Link>
                         </li>
-                        <li className="nav-item">
+                        {/* <li className="nav-item">
                         <Link className="nav-link" to="/create">Crea tu post!</Link>
-                        </li>
+                        </li> */}
                         <li className="nav-item">
-                        <Link className="nav-link" to="/logout">Logout!</Link>
+                        <Link className="nav-link" to="/logout">Logout</Link>
                         </li>
                     </>
                 ) : (
@@ -67,7 +67,7 @@ class Navbar extends Component{
                         <Link className="nav-link" to="/">BTC</Link>
                         </li> */}
                         <li className="nav-item">
-                        <Link className="nav-link" to="/signup">Signup!</Link>
+                        <Link className="nav-link" to="/signup">Signup</Link>
                         </li>
                         <li className="nav-item">
                         <Link className="nav-link" to="/wallet">Wallet</Link>

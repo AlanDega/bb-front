@@ -37,7 +37,7 @@ function Routes() {
 
             <Route exact path="/signup" component={Signup}/>
             <Route exact path="/comprabtc" component={CompraBTC}/>
-            <Route exact path="/post/:id" component={Post} />
+            <Route exact path="//:id" component={Post} />
             <Route exact path="/logout" component={authHOC(Logout)}/>
             <Route exact path="/update/:id" component={Update} />
              <Route exact path="/me" component={Me} />

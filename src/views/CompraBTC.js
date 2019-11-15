@@ -10,8 +10,8 @@ const CREATE_TRANSACTION = gql`
     mutation createTransaction($data:TransactionInput!){
         createNewTransaction(data:$data){
             _id
-            currency
-            transaction_type
+                # currency
+                # transaction_type
 
         }
     }
@@ -56,9 +56,9 @@ function CompraBTC({history}){
                 <form onSubmit={handleSubmit}>
                     <Input
                     name="currency"
-                    label="currency: "
+                    label="currency "
                     type="text"
-                    placeholder=""
+                    placeholder="currency"
                     value={inputs.currency}
                     change={handleInputChange}
                     required={true}
@@ -68,7 +68,7 @@ function CompraBTC({history}){
                                 <label>Cantidad: </label>
                                 <textarea className="form-control" 
                                 placeholder="Cantidad"
-                                name="content" onChange={handleInputChange} value={inputs.transaction_type} 
+                                name="transaction_type" onChange={handleInputChange} value={inputs.transaction_type} 
                                 ></textarea>
                             </div>
                         </div>
@@ -95,4 +95,4 @@ function CompraBTC({history}){
     </>);
 }
 
-export default (CompraBTC);
+export default authHOC(CompraBTC);

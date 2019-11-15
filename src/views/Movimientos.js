@@ -6,15 +6,15 @@ import '../common/Navbar.js'
     return (
         <div>
             <div className="container">
-            <ul class="nav">
-  <li class="nav-item">
-    <a class="nav-link active" href="/">BTC</a>
+            <ul className="nav">
+  <li className="nav-item">
+    <a className="nav-link active" href="/">BTC</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="/eth">ETH</a>
+  <li className="nav-item">
+    <a className="nav-link" href="/eth">ETH</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">EOS</a>
+  <li className="nav-item">
+    <a className="nav-link" href="#">EOS</a>
   </li>
   
 </ul>

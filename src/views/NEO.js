@@ -8,7 +8,7 @@ function Home() {
     return(
         <>
         < LayoutNEO
- head = "NEO"
+ head = "NEO"   
 
          />
         <FeedNEO

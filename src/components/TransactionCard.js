@@ -3,28 +3,28 @@ import { Link } from 'react-router-dom';
 import {useMutation } from 'react-apollo-hooks';
 import gql from 'graphql-tag';
 
-const DELETE_POST = gql`
+const DELETE_TRANSACTION = gql`
 
-  mutation deletePost($id:ID!){
-    deleteOnePost(id:$id)
+  mutation deleteTransaction($id:ID!){ 
+    deleteOneTransaction(id:$id)
   }
 
 `;
 
-function PostCard({title, author, id, edit, remove}) {
-  const [deletePost] = useMutation(DELETE_POST);
+function TransactionCard({currency, client, id, edit, remove}) {
+  const [deleteTransaction] = useMutation(DELETE_TRANSACTION);
 
 
     return (
         <>
         <div className="post-preview">
-          <Link to={`/post/${id}`}>
+          <Link to={`/transaction/${id}`}>
             < h2 className= "post-title" >
-              {title}
+              {currency}
             </h2>
           </Link>
           < p className= "post-meta" > Posted by
-            <Link to="#">{author}</Link> 
+            <Link to="#">{client}</Link> 
           </p>
           <p>
             {
@@ -34,12 +34,12 @@ function PostCard({title, author, id, edit, remove}) {
               remove ? <button onClick={
                 () => {
 
-                    deletePost({variables:{id}}).then(()=>{
+                    deleteTransaction({variables:{id}}).then(()=>{
                       window.location.reload();
                     })
                   
                 }
-              }>Borrar post </button>
+              }>Borrar transaction </button>
               : <></>
             }           
           </p>
@@ -48,4 +48,4 @@ function PostCard({title, author, id, edit, remove}) {
     );
 }
 
-export default PostCard;
+export default TransactionCard;
