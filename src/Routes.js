@@ -4,13 +4,14 @@ import Home from './views/Home'
 import Login from './views/Login'
 import Signup from './views/Signup'
 import authHOC from './utils/authHOC';
-import CompraBTC from './views/CompraBTC';
+import CompraVenta from './views/CompraVenta';
 import Post from './views/Post';
 import Update from './views/Update';
 import Me from './views/Me';
 import ETH from './views/ETH'
 import NEO from './views/NEO'
 import Wallet from './views/Wallet'
+import VentaETH from './views/VentaETH'
 
 
 
@@ -36,7 +37,9 @@ function Routes() {
             <Route exact path="/wallet" component={Wallet}/>
 
             <Route exact path="/signup" component={Signup}/>
-            <Route exact path="/comprabtc" component={CompraBTC}/>
+            <Route exact path="/compraventa" component={CompraVenta}/>
+            <Route exact path="/ventaeth" component={VentaETH}/>
+
             <Route exact path="//:id" component={Post} />
             <Route exact path="/logout" component={authHOC(Logout)}/>
             <Route exact path="/update/:id" component={Update} />

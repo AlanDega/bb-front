@@ -30,11 +30,9 @@ function FeedBTC() {
         <div className="container">
         <div className="text-center">
 
-    <h3 >Precio</h3>
-    <h5 >200 000 MXN</h5>
     <div className="d-flex justify-content-around">
-    <a href="/comprabtc" className="btn btn-primary">Compra</a>
-    <a href="#" className="btn btn-primary">Venta</a>
+    <a href="/compraventa" className="btn btn-primary">Compra</a>
+    <a href="/compraventa" className="btn btn-primary">Venta</a>
 
     </div>
 

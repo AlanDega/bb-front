@@ -10,14 +10,17 @@ const CREATE_TRANSACTION = gql`
     mutation createTransaction($data:TransactionInput!){
         createNewTransaction(data:$data){
             _id
-                # currency
-                # transaction_type
+                currency
+                transaction_type
 
         }
     }
 `;
 
-function CompraBTC({history}){
+function VentaETH({history}){
+
+
+
     const [sendTransaction] = useMutation(CREATE_TRANSACTION);
     // const [cover,setCover] = useState('');
     // const [coverPreview, setCoverPreview] = useState('');
@@ -58,7 +61,7 @@ function CompraBTC({history}){
                     name="currency"
                     label="currency "
                     type="text"
-                    placeholder="currency"
+                    placeholder="moneda"
                     value={inputs.currency}
                     change={handleInputChange}
                     required={true}
@@ -67,7 +70,7 @@ function CompraBTC({history}){
                             <div className="form-group floating-label-form-group controls">
                                 <label>Cantidad: </label>
                                 <textarea className="form-control" 
-                                placeholder="Cantidad"
+                                placeholder="Tipo"
                                 name="transaction_type" onChange={handleInputChange} value={inputs.transaction_type} 
                                 ></textarea>
                             </div>
@@ -95,4 +98,4 @@ function CompraBTC({history}){
     </>);
 }
 
-export default authHOC(CompraBTC);
+export default authHOC(VentaETH);

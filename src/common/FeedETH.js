@@ -2,6 +2,7 @@ import React from 'react';
 import TransactionCard from '../components/TransactionCard';
 import { useQuery } from 'react-apollo-hooks';
 import gql from 'graphql-tag';
+import PrecioETH from '../components/PrecioETH'
 
 
 const QUERY_TRANSACTIONS = gql `
@@ -30,11 +31,10 @@ function FeedETH() {
         <div className="container">
         <div className="text-center">
 
-    <h3 >Precio</h3>
-    <h5 >5000 MXN</h5>
+    <PrecioETH />
     <div className="d-flex justify-content-around">
-    <a href="/comprabtc" className="btn btn-secondary">Compra</a>
-    <a href="#" className="btn btn-secondary">Venta</a>
+    <a href="/compraventa" className="btn btn-secondary">Compra</a>
+    <a href="/compraventa" className="btn btn-secondary">Venta</a>
 
     </div>
 

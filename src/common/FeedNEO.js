@@ -2,6 +2,7 @@ import React from 'react';
 import TransactionCard from '../components/TransactionCard';
 import { useQuery } from 'react-apollo-hooks';
 import gql from 'graphql-tag';
+import PrecioNEO from '../components/PrecioNEO'
 
 
 const QUERY_TRANSACTIONS = gql `
@@ -30,11 +31,10 @@ function FeedNEO() {
         <div className="container">
         <div className="text-center">
 
-    <h3 >Precio</h3>
-    <h5 >1500 MXN</h5>
+        <PrecioNEO />
     <div className="d-flex justify-content-around">
-    <a href="/comprabtc" className="btn btn-lg">Compra</a>
-    <a href="#" className="btn btn-lg">Venta</a>
+    <a href="/compraventa" className="btn btn-lg">Compra</a>
+    <a href="/compraventa" className="btn btn-lg">Venta</a>
 
     </div>
 
